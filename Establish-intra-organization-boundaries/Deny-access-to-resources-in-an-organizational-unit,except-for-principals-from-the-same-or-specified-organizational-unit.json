@@ -1,0 +1,27 @@
+{
+    "Version":"2012-10-17",
+    "Statement":[
+       {
+          "Effect":"Deny",
+          "Principal":"*",
+          "Action":[
+             "s3:*",
+             "sqs:*",
+             "kms:*",
+             "secretsmanager:*"
+          ],
+          "Resource":"*",
+          "Condition":{
+             "ForAllValues:StringLikeIfExists": {
+                "aws:ResourceOrgPaths":"o-orgid/r-acroot/ou-development/*"
+             },
+             "ForAllValues:StringNotEquals": {
+                "aws:PrincipalOrgPaths":"o-orgid/r-acroot/ou-development/"
+             },
+             "BoolIfExists":{
+                "aws:PrincipalIsAWSService":"false"
+             }
+          }
+       }
+    ]
+ }
