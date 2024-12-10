@@ -17,7 +17,9 @@ We recommend that you organize accounts using [OUs based on function](https://do
 ------------------------------------------------------------------------------
 The example policies are divided into different categories based on the type of control. These examples do not represent a complete list and are intended for you to tailor and extend to suit the needs of your environment. This folder contains examples of RCPs that help enforce controls on [services supported by RCPs.](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html#rcp-supported-services)
 
-**Note** : The [RCPFullAWSAccess](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps_examples.html#example-rcp-full-aws-access)  policy is automatically attached to the organization root, every OU, and every account in your organization, when you enable resource control policies (RCPs). This default RCP allows all principals and actions access to pass through RCP evaluation. You can make use of Deny statements to restrict access to resources in your organization. You still also need to grant appropriate permissions to your principals by using identity-based or resource-based policies.
+**Note**: The [RCPFullAWSAccess](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps_examples.html#example-rcp-full-aws-access)  policy is automatically attached to the organization root, every OU, and every account in your organization, when you enable resource control policies (RCPs). This default RCP allows all principals and actions access to pass through RCP evaluation. You can make use of Deny statements to restrict access to resources in your organization. You still also need to grant appropriate permissions to your principals by using identity-based or resource-based policies.
+
+**Note**: Some of the controls in this repository can be implemented using either service control policies (SCPs) or resource control policies (RCPs). Note that SCPs affect only IAM principals that are managed by accounts that are part of the organization. RCPs impact the effective permissions of principals trying to access resources in a member account with an applicable RCP, regardless of whether the principals belong to the same organizations or not.
 
 * **[Data perimeter guardrails](https://github.com/aws-samples/data-perimeter-policy-examples)** : Enforce preventive controls that help ensure only your trusted identities are accessing trusted resources from expected networks.
 
@@ -25,16 +27,10 @@ The example policies are divided into different categories based on the type of 
 
 * **[Restrict resource access patterns](Restrict-resource-access-patterns/Restrict-resource-access-patterns.md)**: Controls that enforce specific rules on the methods used to access your organization's resources, ensuring that only compliant access patterns are permitted.   
 
-* **[Limit access to trusted OIDC identity providers](Limit-access-to-trusted-OIDC-identity-providers/Limit-access-to-trusted-OIDC-identity-providers.md)** : Controls that govern the authentication and authorization mechanisms used by external OIDC identity providers (IdPs) to grant access to your organization's resources.
+* **[Limit access to trusted OIDC identity providers](Limit-access-to-trusted-OIDC-identity-providers/Limit-access-to-trusted-OIDC-identity-providers.md)** : Controls that govern the authorization mechanisms used by external OIDC identity providers (IdPs) to grant access to your organization's resources.
 
 * **[Service specific controls](Service-specific-controls/Service-specific-controls.md)**: Controls that define baseline security requirements or guidelines that are implemented across individual AWS services to ensure a standardized approach to security and compliance.
   
-* **[Controls that can be implemented using either SCP or RCP](Controls-that-can-be-implemented-using-either-SCP-or-RCP/Controls-that-can-be-implemented-using-either-SCP-or-RCP.md)**: Controls that can be enforced using either service control policies (SCPs) or resource control policies (RCPs). 
-    * Note that SCPs affect only IAM principals that are managed by accounts that are part of the organization. RCPs impact the effective permissions of principals trying to access resources in a member account with an applicable RCP, regardless of whether the principals belong to the same organizations or not. 
-
-
-
-
 
 
 

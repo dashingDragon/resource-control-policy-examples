@@ -19,9 +19,6 @@
             ],
             "Resource": "*",
             "Condition": {
-                "ForAllValues:StringLikeIfExists": {
-                    "aws:ResourceOrgPaths":"o-orgid/r-acroot/ou-suspended/"
-                },
                 "BoolIfExists": {
                     "aws:PrincipalIsAWSService": "false"
                 },
