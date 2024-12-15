@@ -4,7 +4,10 @@
        {
           "Effect":"Deny",
           "Principal":"*",
-          "Action":"s3:PutAccountPublicAccessBlock",
+          "Action":[
+              "s3:PutBucketPublicAccessBlock",
+              "s3:PutAccountPublicAccessBlock"
+          ],
           "Resource":"*",
           "Condition":{
              "ArnNotLike":{
